@@ -8,6 +8,7 @@ nodemon({ watch: ["2023/**/*"], ext: "ts", exec: "echo ''" })
   .on("restart", function (files = []) {
     files.forEach(async (file) => {
       if (file.endsWith(".ts")) {
+        console.clear();
         runScript(file, (err: any) => {
           if (err) throw err;
         });
